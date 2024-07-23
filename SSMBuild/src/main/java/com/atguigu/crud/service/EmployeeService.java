@@ -8,15 +8,15 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- *@ClassName EmployeeService
- *@Description  TODO
- *@Author hqb
- *@Date 2021/10/4 19:13
- *@Version 1.0
+ * @ClassName EmployeeService
+ * @Description TODO
+ * @Author hqb
+ * @Date 2021/10/4 19:13
+ * @Version 1.0
  */
 
 @Service
-public class EmployeeService{
+public class EmployeeService {
 
     @Autowired
     EmployeeMapper employeeMapper;

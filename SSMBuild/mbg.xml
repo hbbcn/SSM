@@ -6,7 +6,7 @@
 <generatorConfiguration>
 
 
-<!--targetRuntime="MyBatis3Simple:生成简单的CRUD-->
+    <!--targetRuntime="MyBatis3Simple:生成简单的CRUD-->
     <context id="DB2Tables" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
@@ -19,8 +19,8 @@
         </jdbcConnection>
 
         <!---->
-        <javaTypeResolver >
-            <property name="forceBigDecimals" value="false" />
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
         <!--指定javaBean的生成策略
@@ -29,21 +29,21 @@
         -->
         <javaModelGenerator targetPackage="com.atguigu.crud.bean"
                             targetProject=".\src\main\java">
-            <property name="enableSubPackages" value="true" />
-            <property name="trimStrings" value="true" />
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--sqlMapGenerator: sql映射生成策略-->
         <sqlMapGenerator targetPackage="mapper"
                          targetProject=".\src\main\resources">
-            <property name="enableSubPackages" value="true" />
+            <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!--指定mapper接口的所在位置-->
         <javaClientGenerator type="XMLMAPPER"
                              targetPackage="com.atguigu.crud.dao"
                              targetProject=".\src\main\java">
-            <property name="enableSubPackages" value="true" />
+            <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!--指定要逆向分析哪些表-->

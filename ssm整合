@@ -1,0 +1,16 @@
+########################基础环境搭建#########################
+1、创建一个maven工程
+2、引入项目依赖的jar包
+    ·Spring
+    ·SpringMVC
+    ·mybatis
+    ·数据库连接池，驱动包
+    ·其他(jstl,servelt-api,junit)
+3、引入bootstrap前端框架
+4、编写ssm整合的关键配置文件
+    ·web.xml, spring, springMVC,mybatis,使用mybatis的逆行工程生成对应的bean和mapper
+
+    URI和URL都定义了资源是什么，但URL还定义了该如何访问资源。
+    URL是一种具体的URI，它是URI的一个子集，它不仅唯一标识资源，而且还提供了定位该资源的信息。
+    用于指定要配置别名的包，当指定之后，该包下的实体类都会注册别名，并且类名就是别名，不再区分大小写
+    <package name="com.itheima.domain"></package>

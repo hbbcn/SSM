@@ -2,7 +2,9 @@ package com.atguigu.crud.dao;
 
 import com.atguigu.crud.bean.Department;
 import com.atguigu.crud.bean.DepartmentExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface DepartmentMapper {

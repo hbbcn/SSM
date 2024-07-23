@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *@ClassName MBGTest
- *@Description  TODO
- *@Author hqb
- *@Date 2021/9/11 11:14
- *@Version 1.0
+ * @ClassName MBGTest
+ * @Description TODO
+ * @Author hqb
+ * @Date 2021/9/11 11:14
+ * @Version 1.0
  */
-public class MBGTest{
+public class MBGTest {
 
     @Test
     public void testMbg() throws Exception {

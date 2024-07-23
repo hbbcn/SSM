@@ -1,0 +1,8 @@
+####################注解##################
+@EnableAutoConfiguration
+ 当spring boot扫描到@EnableAutoConfiguration注解时则会将
+ spring-boot-autoconfigure.jar/META-INF/spring.factories文件中
+ org.springframework.boot.autoconfigure.
+ 对应的value里的所有xxxConfiguration类加载到IOC容器中。而xxxAutoConfiguration
+ 类一般都会有@ConditionalOnxxx注解，通过这些条件注解来判断是否真正的创建xxxConfiguration对象。
+ spring boot的各种spring-boot-starter-xxx.jar也正是居于此注解来达到自动装配的目的

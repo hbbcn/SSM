@@ -15,23 +15,23 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
 import java.util.List;
 
 /**
- *@ClassName MvcTest
- *@Description
- * 使用Spring测试模块提供的测试请求功能,测试crud请求的正确性
- *@Author hqb
- *@Date 2021/10/4 22:06
- *@Version 1.0
+ * @ClassName MvcTest
+ * @Description 使用Spring测试模块提供的测试请求功能, 测试crud请求的正确性
+ * @Author hqb
+ * @Date 2021/10/4 22:06
+ * @Version 1.0
  */
 //单元测试版本
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 //加载配置文件
-@ContextConfiguration(locations = {"classpath:applicationContext.xml","file:src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml"})
+@ContextConfiguration(locations = {"classpath:applicationContext.xml", "file:src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml"})
 
-public class MvcTest{
+public class MvcTest {
 
     //传入SpringMvc的ioc
     @Autowired
@@ -40,7 +40,7 @@ public class MvcTest{
     MockMvc mockMvc;
 
     @Before
-    public void initMockMvc(){
+    public void initMockMvc() {
         mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
     }
 
@@ -52,18 +52,19 @@ public class MvcTest{
         //请求成功以后,请求域中会有pageInfo,我们可以取出pageInfo进行验证
         MockHttpServletRequest request = result.getRequest();
         PageInfo pi = (PageInfo) request.getAttribute("pageInfo");
+        System.out.println(pi);
         System.out.println("当前页码;" + pi.getPageNum());
         System.out.println("总页码:" + pi.getPages());
         System.out.println("总记录数:" + pi.getTotal());
         System.out.println("在页面需要连续显示的页码");
         int[] nums = pi.getNavigatepageNums();
-        for (int i : nums){
+        for (int i : nums) {
             System.out.println(" " + i);
         }
 
         //获取员工数据
         List<Employee> list = pi.getList();
-        for (Employee employee : list){
+        for (Employee employee : list) {
             System.out.println(employee);
         }
     }

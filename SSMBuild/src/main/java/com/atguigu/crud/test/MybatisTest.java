@@ -16,12 +16,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.UUID;
 
 /**
- *@ClassName MybatisTest2
- *@Description  测试dao层工作
- *@Author hqb
- *@Date 2021/9/11 14:12
- *@Version 1.0
- *
+ * @ClassName MybatisTest2
+ * @Description 测试dao层工作
+ * @Author hqb
+ * @Date 2021/9/11 14:12
+ * @Version 1.0
+ * <p>
  * 1.导入SpringTest模块
  * 2.@ContextConfiguration指定Spring配置文件的位置
  */
@@ -63,23 +63,20 @@ public class MybatisTest {
     SqlSession sqlSession;
 
     @Test
-    public void testCRUD01(){
+    public void testCRUD01() {
 
         System.out.println(departmentMapper);
 
         //1.插入几个部门
 
-
-//        departmentMapper.insertSelective(new Department(1,"开发部"));
-//          departmentMapper.insertSelective(new Department(2,"测试部"));
-
-
-          employeeMapper.insertSelective(new Employee(null,"Jerry","M","Jerry@atguigu,com",2));
+//      departmentMapper.insertSelective(new Department(1,"开发部"));
+//      departmentMapper.insertSelective(new Department(2,"测试部"));
+        employeeMapper.insertSelective(new Employee(null, "Jerry", "M", "Jerry@atguigu,com", 2));
 
         EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
         for (int i = 0; i < 1000; i++) {
             String uuid = UUID.randomUUID().toString().substring(0, 5) + i;
-            mapper.insertSelective(new Employee(null,uuid,"M", uuid+"@atguigu.com",1));
+            mapper.insertSelective(new Employee(null, uuid, "M", uuid + "@atguigu.com", 1));
         }
     }
 
